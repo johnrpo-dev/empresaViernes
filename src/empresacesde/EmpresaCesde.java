@@ -5,6 +5,7 @@
  */
 package empresacesde;
 
+import empleado.Empleado;
 import java.util.Scanner;
 
 /**
@@ -32,6 +33,39 @@ public class EmpresaCesde {
             
             System.out.print("Digite una opcion: ");
             opcion = entrada.nextInt();
+            int contador = 0;
+            //int edad = 50;
+            Empleado[] empleados = new Empleado[10]; 
+            
+            switch (opcion) {
+                case 1: 
+                    empleados[contador] = new Empleado();
+                    System.out.println("Digita el id: ");
+                    empleados[contador].setId(entrada.nextInt());
+                    System.out.println("Digita el nombre: ");
+                    empleados[contador].setNombre(entrada.next());
+                    System.out.println("Digite el cargo: ");
+                    empleados[contador].setCargo(entrada.next());
+                    System.out.println("Digite el salario: ");
+                    empleados[contador].setSalario(entrada.nextInt());
+                    System.out.println("Digite el telefono: ");
+                    empleados[contador].setTelefono(entrada.next());
+                    System.out.println("Digite la direccion: ");
+                    empleados[contador].setDireccion(entrada.next());
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    for (int i = 0; i<contador; i++)
+                        System.out.print(empleados[i].getNombre());
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opcion no valida");
+                    break;
+            }
             
         }while(opcion != 4);
     }
